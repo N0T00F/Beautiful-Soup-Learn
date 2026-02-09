@@ -40,6 +40,7 @@ if script_tag:
 df = pd.DataFrame(movies_data)
 df.set_index("Rank", inplace=True)
 pd.set_option('display.max_rows', None)
-
+df.to_csv("top_movies_all.csv", index_label="Rank")
+df.index = df.index + 1
 print(f"Total Movies: {len(df)}")
 print(df.head(250)) # Show top 250 movies
